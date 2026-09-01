@@ -21,7 +21,7 @@
       <article class="document">
         <header class="hero">
           <h1>Ishta Privacy Policy</h1>
-          <p class="updated">Last updated: July 21, 2026</p>
+          <p class="updated">Last updated: August 9, 2026</p>
         </header>
 
         <section>
@@ -64,8 +64,10 @@
             to add a food photo or avatar, Ishta may access your camera or photo
             library after you grant permission. We use these permissions only to
             let you take or select images for your posts or profile. Uploaded
-            images are stored so they can be shown in the app according to the
-            app's visibility rules.
+            images are stored in private processing storage first. Images
+            attached to eligible public posts, and avatars for public profiles,
+            are then published at stable public web addresses. Other images
+            remain access-restricted.
           </p>
           <p>
             <strong>Location information.</strong> With your permission, Ishta
@@ -94,6 +96,14 @@
             names, and error details. We redact common secret, token, password,
             and authorization fields before sending analytics events.
           </p>
+          <p>
+            <strong>Push notification information.</strong> Push notification
+            registration and delivery information, after you grant permission
+            and enable push notifications, including your Expo push token,
+            platform, device session identifier and device name when available,
+            app version, and native build version. Push delivery may include the
+            notification title, body, and related routing data.
+          </p>
         </section>
 
         <section>
@@ -107,7 +117,7 @@
           <p>
             Ishta uses the response only on your device for the current app
             launch. We do not store or otherwise persist the response, include
-            it in analytics, or transmit it to Supabase, PostHog, or any other
+            it in analytics, or transmit it to Cloudflare, PostHog, or any other
             Ishta service. If the response indicates that you are under 13,
             Ishta blocks access to the app.
           </p>
@@ -148,16 +158,32 @@
           <h2>How We Share Information</h2>
           <p>We do not sell personal information.</p>
           <p>
-            Other Ishta users may see your profile, posts, photos, ratings,
-            comments, follows, badges, and related activity according to product
-            features and your visibility settings.
+            Anyone, including people who are not signed in, may access the
+            limited public profile information, eligible public posts, public
+            post images, and limited public comment previews that you choose to
+            make public. Public content may be cached, linked to, or indexed by
+            conventional search engines. Full comment discussions, connection
+            lists, private activity, follower-only posts, and posts from private
+            profiles require authorized access.
           </p>
           <p>
-            Service providers process information for us, including Supabase for
-            authentication, database, storage, realtime, and edge functions;
+            Service providers process information for us, including Cloudflare
+            for application hosting, authentication storage, databases, object
+            storage, media processing, queues, realtime delivery, and security;
+            OpenAI for safety checks on submitted profile, post, and comment
+            text and for food classification using submitted dish names;
             PostHog for analytics and error tracking; Google for Google Sign-In,
-            Maps, Places, and image safety checks; Apple for Apple Sign-In; and
-            Resend/Supabase SMTP for authentication emails.
+            Maps, Places, image safety checks, and Android push notification
+            delivery; Apple for Apple Sign-In, Declared Age Range on supported
+            iOS versions, and iOS push notification delivery; Expo for push
+            notification token registration and delivery coordination; and
+            Resend for authentication and service email delivery.
+          </p>
+          <p>
+            We require each third party that receives user data from Ishta to
+            provide the same or equivalent protection of that data as described
+            in this Privacy Policy and required by applicable platform rules and
+            law.
           </p>
           <p>
             Legal, safety, and business purposes may require disclosure if
@@ -172,19 +198,30 @@
           <h2>Third-Party Services</h2>
           <ul>
             <li>
-              Supabase: authentication, database, storage, realtime, and edge
-              functions.
-            </li>
-            <li>
-              Google: Google Sign-In, Maps, Places, and Vision SafeSearch
+              Cloudflare: Workers, D1 databases, R2 object storage, image
+              processing, queues, workflows, realtime delivery, and security
               services.
             </li>
             <li>
-              Apple: Apple Sign-In and Declared Age Range on supported iOS
-              versions.
+              OpenAI: safety moderation of submitted profile, post, and comment
+              text, and food classification using embeddings generated from
+              submitted dish names.
+            </li>
+            <li>
+              Google: Google Sign-In, Maps, Places, Vision SafeSearch, and
+              Android push notification delivery services.
+            </li>
+            <li>
+              Apple: Apple Sign-In, Declared Age Range on supported iOS
+              versions, and iOS push notification delivery services.
+            </li>
+            <li>
+              Expo: push notification token registration and delivery
+              coordination, including notification titles, bodies, and related
+              routing data.
             </li>
             <li>PostHog: analytics and error tracking.</li>
-            <li>Resend and Supabase SMTP: authentication email delivery.</li>
+            <li>Resend: authentication and service email delivery.</li>
           </ul>
         </section>
 
@@ -204,12 +241,16 @@
           </p>
           <p>
             You can request account deletion from inside the app. When your
-            account is deleted, Ishta deletes your authentication account,
-            private Feed impression and interaction history, Feed Not interested
-            exclusions, and account-owned avatar and post image storage objects.
-            Some records may be deleted, anonymized, or retained when needed for
+            account is deleted, Ishta revokes active sessions, removes the
+            account and its private Feed history and exclusions, and deletes
+            account-owned avatar and post image objects from Ishta's active
+            private and public storage. Public cache entries under Ishta's
+            control are purged. Copies previously downloaded, cached, linked, or
+            indexed by third parties may remain outside Ishta's control. Some
+            records may be deleted, anonymized, or retained when needed for
             security, integrity, fraud prevention, legal compliance, backups, or
-            to preserve non-personal aggregate metrics.
+            to preserve non-personal aggregate metrics. Encrypted backup copies
+            may persist for up to 30 days before deletion.
           </p>
           <p>
             To request account deletion outside the app, contact
@@ -232,6 +273,11 @@
           <h2>Your Choices</h2>
           <ul>
             <li>Update profile information and visibility settings in the app.</li>
+            <li>
+              Choose whether your profile is public or private and whether an
+              eligible post is visible on your public profile or only to
+              followers.
+            </li>
             <li>Report posts, comments, and profiles.</li>
             <li>
               Mark a Feed post Not interested and use Undo to show it in Feed
@@ -243,8 +289,8 @@
               through your device settings.
             </li>
             <li>
-              If you revoke permissions, some features may stop working or have
-              reduced functionality.
+              Enable or disable push notifications in Ishta and grant or revoke
+              notification permission through your device settings.
             </li>
             <li>Sign out of your account.</li>
             <li>
@@ -252,6 +298,10 @@
               <a href="mailto:team@joinishta.app">team@joinishta.app</a>.
             </li>
           </ul>
+          <p>
+            If you revoke permissions, some features may stop working or have
+            reduced functionality.
+          </p>
         </section>
 
         <section>
